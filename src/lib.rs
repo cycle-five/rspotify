@@ -50,9 +50,14 @@
 //!
 //! ### Proxies
 //!
-//! [reqwest supports system proxies by default][reqwest-proxies]. It reads the
-//! environment variables `HTTP_PROXY` and `HTTPS_PROXY` environmental variables
-//! to set HTTP and HTTPS proxies, respectively.
+//! Both [reqwest][reqwest-proxies] and [ureq][ureq-proxying] support system
+//! proxies by default. They both read `http_proxy`, `https_proxy`, `all_proxy`
+//! and their uppercase variants `HTTP_PROXY`, `HTTPS_PROXY`, `ALL_PROXY`,
+//! although the specific logic implementations are a little different.
+//!
+//! See also:
+//! - [reqwest](https://docs.rs/reqwest/latest/src/reqwest/proxy.rs.html#897-920)
+//! - [ureq](https://docs.rs/ureq/latest/src/ureq/proxy.rs.html#73-95)
 //!
 //! ### Environmental variables
 //!
@@ -222,6 +227,9 @@ pub enum ClientError {
 
     #[error("model error: {0}")]
     Model(#[from] model::ModelError),
+
+    #[error("Token is not valid")]
+    InvalidToken,
 }
 
 // The conversion has to be done manually because it's in a `Box<T>`
