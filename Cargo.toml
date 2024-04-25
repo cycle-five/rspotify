@@ -27,6 +27,7 @@ rspotify-http = { path = "rspotify-http", version = "0.13.1", default-features =
 async-stream = { version = "0.3.5", optional = true }
 async-trait = { version = "0.1.80", optional = true }
 base64 = "0.22.0"
+
 chrono = { version = "0.4.38", features = ["serde"] }
 dotenvy = { version = "0.15.7", optional = true }
 futures = { version = "0.3.30", optional = true }
@@ -38,7 +39,7 @@ serde_json = "1.0.116"
 sha2 = "0.10.8"
 thiserror = "1.0.59"
 url = "2.5.0"
-webbrowser = { version = "0.8.0", optional = true }
+webbrowser = { version = "1.0.0", optional = true }
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]
 getrandom = { version = "0.2.14", features = ["js"] }
