@@ -62,7 +62,7 @@ tokio = { version = "1.37.0", features = ["rt", "macros"] }
 dotenvy_macro = { version = "0.15.7" }
 
 [features]
-default = ["client-reqwest", "reqwest-default-tls"]
+default = ["client-reqwest", "reqwest-rustls-tls"]
 
 ### Client ###
 cli = ["webbrowser"]
