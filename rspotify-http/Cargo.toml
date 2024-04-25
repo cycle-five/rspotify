@@ -42,7 +42,6 @@ rspotify-model = { path = "../rspotify-model", version = "0.13.1" }
 
 [features]
 default = ["client-reqwest", "reqwest-rustls-tls"]
-default-features = false
 
 # Available clients. By default they don't include a TLS so that it can be
 # configured.
